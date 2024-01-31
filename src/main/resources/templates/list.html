@@ -1,0 +1,29 @@
+<!-- src/main/resources/templates/list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+</head>
+<body>
+    <h2>Employee List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterate over employee data and display in table rows -->
+            <tr th:each="employee : ${employees}">
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.name}"></td>
+                <td th:text="${employee.email}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
