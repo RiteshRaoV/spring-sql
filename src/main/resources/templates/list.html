@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/list.css}" rel="stylesheet" type="text/css">
     <title>Employee List</title>
 </head>
 <body>
@@ -25,5 +26,6 @@
             </tr>
         </tbody>
     </table>
+    <a th:href="@{/add}" class="add-more-button">Add More Employees</a>
 </body>
 </html>
