@@ -1,8 +1,6 @@
 package sqlfrontend.Employee;
 // Employee.java
 
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +12,7 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String name;
     private String email;
 
@@ -53,4 +51,3 @@ public class Employee {
         this.email = email;
     }
 }
-

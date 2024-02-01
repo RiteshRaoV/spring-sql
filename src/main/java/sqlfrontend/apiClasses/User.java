@@ -1,4 +1,4 @@
-package sqlfrontend.EmployeeController;
+package sqlfrontend.apiClasses;
 
 public class User {
     private int id;
@@ -10,15 +10,16 @@ public class User {
     // Constructors, getters, and setters
 
     // Empty constructor for deserialization
-    public User() {}
+    public User() {
+    }
 
-    public User(int id, String name, String email, String phone, String website,String username) {
+    public User(int id, String name, String email, String phone, String website, String username) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.username = username;
-        this.website=website;
+        this.website = website;
     }
 
     public int getId() {

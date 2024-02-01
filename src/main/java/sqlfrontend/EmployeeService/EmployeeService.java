@@ -1,6 +1,5 @@
 package sqlfrontend.EmployeeService;
 
-
 import java.util.List;
 import java.util.Optional;
 
@@ -15,19 +14,23 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository repo;
 
-    public List<Employee> getAllEmployees(){
+    public List<Employee> getAllEmployees() {
         return repo.findAll();
     }
-    public void saveEmployee(Employee employee){
+
+    public void saveEmployee(Employee employee) {
         repo.save(employee);
     }
-    public Optional<Employee> getEmployeeById(Long id){
+
+    public Optional<Employee> getEmployeeById(Long id) {
         return repo.findById(id);
     }
-    public void updateEmployee(Employee employee){
+
+    public void updateEmployee(Employee employee) {
         repo.save(employee);
     }
-    public void deleteEmployee(Long id){
+
+    public void deleteEmployee(Long id) {
         repo.deleteById(id);
     }
 }
