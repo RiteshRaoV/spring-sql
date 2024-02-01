@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>username</th>
+                <th>website</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterate over the list of users and display details -->
+            <tr th:each="user : ${ApiUser}">
+                <td th:text="${user.id}"></td>
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.phone}"></td> 
+                <td th:text="${user.username}"></td> 
+                <td th:text="${user.website}"></td> 
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
