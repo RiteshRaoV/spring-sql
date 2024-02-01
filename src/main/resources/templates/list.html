@@ -15,6 +15,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -23,9 +24,16 @@
                 <td th:text="${employee.id}"></td>
                 <td th:text="${employee.name}"></td>
                 <td th:text="${employee.email}"></td>
+                <td><span class="delete-button">
+                    <form action="/delete" method="post">
+                        <button type="submit" class="delete" name="id" th:value="${employee.id}">delete</button>
+                    </form>
+                </span></td>
             </tr>
         </tbody>
     </table>
-    <a th:href="@{/add}" class="add-more-button">Add More Employees</a>
+    <button class="employee-button"><a th:href="@{/add}" class="add-more-button">Add More Employees</a></button>
+    <button class="employee-button"><a th:href="@{/edit}" >Update employee</a></button>
+    
 </body>
 </html>

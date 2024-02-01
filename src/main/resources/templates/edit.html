@@ -1,20 +1,23 @@
 <!-- src/main/resources/templates/edit.html -->
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
 <head>
     <!-- Add necessary head elements -->
+    <link rel="stylesheet" th:href="@{/add.css}">
 </head>
 <body>
     <h2>Edit Employee</h2>
-    <form action="/update" method="post" th:object="${employee}">
-        <input type="hidden" th:field="*{id}" />
+    <form action="/update" method="post">
+        <label for="id">Id:</label>
+        <input type="text" id="id" name="id" required>
+        <br>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" th:field="*{name}" required>
+        <input type="text" id="Username" name="name" required>
         <br>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" th:field="*{email}" required>
+        <input type="email" id="email" name="email" required>
         <br>
-        <button type="submit">Update Employee</button>
+        <button type="submit">Add Employee</button>
     </form>
 </body>
 </html>

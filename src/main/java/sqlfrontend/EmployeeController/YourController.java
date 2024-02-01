@@ -22,8 +22,8 @@ public class YourController {
     private EmployeeService yourService;
 
     @GetMapping("/add")
-    public String showAddForm(Model model) {
-        model.addAttribute("employee", new Employee());
+    public String showAddForm() {
+        // model.addAttribute("employee", new Employee());
         return "add";
     }
 
@@ -40,10 +40,8 @@ public class YourController {
         return "list";
     }
 
-    @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable Long id, Model model) {
-        Optional<Employee> employee = yourService.getEmployeeById(id);
-        model.addAttribute("employee", employee);
+    @GetMapping("/edit")
+    public String showEditForm() {
         return "edit";
     }
 
