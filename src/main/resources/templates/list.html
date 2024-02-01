@@ -19,21 +19,53 @@
             </tr>
         </thead>
         <tbody>
+            
             <!-- Iterate over employee data and display in table rows -->
             <tr th:each="employee : ${employees}">
                 <td th:text="${employee.id}"></td>
                 <td th:text="${employee.name}"></td>
                 <td th:text="${employee.email}"></td>
+              
                 <td><span class="delete-button">
+                        <button onclick="openModal()">Update</button>
                     <form action="/delete" method="post">
                         <button type="submit" class="delete" name="id" th:value="${employee.id}">delete</button>
                     </form>
                 </span></td>
+
+
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <form action="/update" method="post">
+                            <label for="name">Id:</label>
+                            <input type="text" id="name" name="id" th:value="${employee.id}"   >
+                
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" th:placeholder="${employee.name}"  required>
+                
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" th:placeholder="${employee.email}"  required>
+                            
+                                <button type="submit" onclick="closeModal()">Submit</button>
+                         
+                     
+                            <button type="button" onclick="closeModal()">Close</button>
+                        </form>
+                    </div>
+                </div>
+
+
             </tr>
         </tbody>
     </table>
     <button class="employee-button"><a th:href="@{/add}" class="add-more-button">Add More Employees</a></button>
-    <button class="employee-button"><a th:href="@{/edit}" >Update employee</a></button>
     
+    
+    
+    
+    <script th:src="@{/script.js}"></script>
+
+
 </body>
 </html>
