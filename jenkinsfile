@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                // Checkout source code
+                checkout scm
+                
+                // Build Spring Boot project using Maven
+                sh 'mvn clean package'
+            }
+        }
+        stage('Test') {
+            steps {
+                // Run tests
+                sh 'mvn test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Deploy Spring Boot application
+                sh 'java -jar target/my-spring-boot-app.jar &'
+            }
+        }
+    }
+}
