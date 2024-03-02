@@ -34,5 +34,11 @@ pipeline {
                 }
             }
         }
+        stage('Run Application') {
+            steps {
+                // Navigate to the desktop directory and run the JAR file
+                bat 'cd "C:\\Users\\rithe\\Desktop" && java -jar sql-0.0.1-SNAPSHOT.jar.original'
+            }
+        }
     }
 }
