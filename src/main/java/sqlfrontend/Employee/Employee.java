@@ -16,10 +16,8 @@ public class Employee {
     private String name;
     private String email;
 
-    // Constructors, getters, and setters
 
     public Employee() {
-        // Default constructor required by JPA
     }
 
     public Employee(String name, String email) {
