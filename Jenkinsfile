@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/RiteshRaoV/spring-sql.git'
+                // Checkout the 'main' branch
+                git branch: 'main', url: 'https://github.com/RiteshRaoV/spring-sql.git'
             }
         }
         
