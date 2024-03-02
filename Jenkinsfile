@@ -4,21 +4,28 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the 'main' branch
-                git branch: 'main', url: 'https://github.com/RiteshRaoV/spring-sql.git'
+                // Checkout the correct branch (replace 'main' with the actual branch name)
+                bat 'git clone -b main https://github.com/RiteshRaoV/spring-sql.git'
             }
         }
         
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                // Navigate into the project directory
+                dir('spring-sql') {
+                    // Build the project with Maven
+                    bat 'mvn clean package'
+                }
             }
         }
         
-        stage('Deploy to Localhost') {
+        stage('Deploy to Desktop') {
             steps {
-                // Copy the JAR file to the deploy directory
-                sh 'cp target/your-app.jar /path/to/deploy/directory'
+                // Navigate into the project directory
+                dir('spring-sql') {
+                    // Copy the JAR file to the desktop
+                    bat 'copy target\\your-app.jar %USERPROFILE%\\Desktop'
+                }
             }
         }
     }
