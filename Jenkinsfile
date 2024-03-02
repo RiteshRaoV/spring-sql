@@ -24,7 +24,7 @@ pipeline {
                 // Navigate into the project directory
                 dir('spring-sql') {
                     // Copy the JAR file to the desktop
-                    bat 'copy C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\test1\\spring-sql\\target\\sql-0.0.1-SNAPSHOT.jar.original %USERPROFILE%\\Desktop'
+                    bat 'copy C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\test1\\spring-sql\\target\\sql-0.0.1-SNAPSHOT.jar.original "C:\\Users\\rithe\\Desktop"'
                 }
             }
         }
